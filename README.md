@@ -1,6 +1,6 @@
 # College_Project
 BlueChat - Minor Project
-Status: In Progress (Mid-Term Viva)
+Status: In Progress
 
 This repository contains the source code for BlueChat, a minor project for my college course. It is a peer-to-peer chat application for Android that uses Bluetooth Low Energy (BLE) for communication.
 
