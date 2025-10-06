@@ -1,73 +1,57 @@
-# College_Project
-BlueChat - Minor Project
-Status: In Progress
+# BlueChat - Minor Project 🚀
 
-This repository contains the source code for BlueChat, a minor project for my college course. It is a peer-to-peer chat application for Android that uses Bluetooth Low Energy (BLE) for communication.
+**Status:** In Progress (Mid-Term)
 
-The project is based on the BluetoothCommunicator library and follows the architecture of its example application.
+This repository contains the source code for BlueChat, a peer-to-peer chat application for Android that uses Bluetooth Low Energy (BLE) for communication. It is being developed as a minor project for my college course.
 
-Current Progress
+The project is based on the [BluetoothCommunicator](https://github.com/niedev/BluetoothCommunicator) library and follows the architecture of its official example application.
+
+-----
+
+## 📋 Current Progress
+
 The foundational structure and core logic of the application have been successfully set up. The following milestones have been completed:
 
-1. Project Setup & Gradle Configuration
-The project was initialized in Android Studio using the Empty Views Activity template with Java as the primary language.
+### 1\. Project Setup & Gradle Configuration
 
-The project-level build.gradle has been configured to use the required Android Gradle Plugin version and includes the necessary repositories like jcenter() and jitpack.io.
+  - The project was initialized in Android Studio using the **Empty Views Activity** template with **Java**.
+  - The root `build.gradle` has been configured to include the necessary repositories like `jcenter()` and `jitpack.io`.
+  - The app-level `build.gradle` has been updated with all required dependencies, including the core `BluetoothCommunicator` library and AndroidX support libraries (`appcompat`, `recyclerview`, etc.).
 
-The app-level build.gradle has been updated with all the required dependencies for the project, including:
+### 2\. Application Manifest & Permissions
 
-com.github.niedev:BluetoothCommunicator:1.0.6 for the core Bluetooth functionality.
+  - The `AndroidManifest.xml` file has been properly configured with all necessary permissions for Bluetooth functionality:
+    ```xml
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    ```
+  - The manifest is also set up to use a custom `Application` class (`.Global`) and has the `android:largeHeap="true"` attribute for improved performance.
 
-AndroidX libraries such as appcompat, recyclerview, cardview, and constraintlayout for the user interface.
+### 3\. Core Architecture & Java Classes
 
-2. Application Manifest & Permissions
-The AndroidManifest.xml file has been properly configured with all necessary permissions for Bluetooth communication and device discovery:
+  - A **`Global.java`** class has been created to initialize and manage a global instance of the `BluetoothCommunicator`.
+  - The project's code has been organized into a clean package structure:
+    ```
+    com.example.bluechat
+    ├── fragments
+    ├── gui
+    └── tools
+    ```
+  - All essential Java classes for the application's logic and UI have been created, including `PairingFragment`, `ConversationFragment`, `MessagesAdapter`, and `PeerListAdapter`.
 
-android.permission.BLUETOOTH
+### 4\. User Interface (XML Layouts)
 
-android.permission.BLUETOOTH_ADMIN
+  - All necessary XML layout files have been created in the `app/src/main/res/layout` directory.
+  - This includes layouts for the main activity, fragments, and the components for list items and message bubbles.
 
-android.permission.ACCESS_FINE_LOCATION
+-----
 
-The manifest is also set up to use a custom Application class (.Global) and has the android:largeHeap="true" attribute for improved performance.
+## 📝 Next Steps
 
-3. Core Architecture & Java Classes
-A Global.java class has been created to initialize the BluetoothCommunicator instance, ensuring it is globally accessible throughout the app's lifecycle.
+The following tasks are pending to make the project fully functional:
 
-The project has been organized into a clean package structure to separate concerns:
-
-com.example.bluechat.fragments
-
-com.example.bluechat.gui
-
-com.example.bluechat.tools
-
-The essential Java classes for the application's logic and UI have been created, including:
-
-Fragments: PairingFragment.java and ConversationFragment.java.
-
-GUI Adapters: MessagesAdapter.java and PeerListAdapter.java.
-
-GUI Helpers: RequestDialog.java.
-
-Tools: Timer.java and Tools.java.
-
-4. User Interface (XML Layouts)
-All the necessary XML layout files have been created in the app/src/main/res/layout directory. This includes layouts for:
-
-The main activity (activity_main.xml).
-
-The primary fragments (fragment_pairing.xml, fragment_conversation.xml).
-
-The list components and message bubbles (component_row.xml, component_message_send.xml, component_message_received.xml).
-
-Next Steps
-The following tasks are pending to complete the project and make it fully functional:
-
-Add all resource files: Populate the res directory with the required colors, styles, drawables, and animation files from the example project.
-
-Implement MainActivity.java: Replace the current template MainActivity.kt with the final Java code to manage fragment transactions and handle the main application logic.
-
-Complete GUI Helper Classes: Add the code for the remaining gui classes (ButtonSearch.java, CustomAnimator.java, GuiTools.java).
-
-Build and Debug: Compile the complete project, test the functionality on physical devices, and resolve any bugs.
+1.  **Add all resource files**: Populate the `res` directory with the required `colors.xml`, `styles.xml`, and all `drawable` and `anim` files.
+2.  **Implement `MainActivity.java`**: Replace the current template `MainActivity.kt` with the final Java code to manage fragment transactions and the main application logic.
+3.  **Complete GUI Helper Classes**: Add the code for the remaining `gui` classes (`ButtonSearch.java`, `CustomAnimator.java`, `GuiTools.java`).
+4.  **Build and Debug**: Compile the complete project, test the functionality on physical devices, and resolve any bugs.
