@@ -1,6 +1,6 @@
 # BlueChat - Minor Project 🚀
 
-**Status:** In Progress (Mid-Term)
+**Status:** In Progress
 
 BlueChat, a peer-to-peer chat application for Android that uses Bluetooth Low Energy (BLE) for communication. It is being developed as a minor project for my college course.
 
