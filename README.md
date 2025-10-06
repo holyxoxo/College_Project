@@ -2,7 +2,7 @@
 
 **Status:** In Progress (Mid-Term)
 
-This repository contains the source code for BlueChat, a peer-to-peer chat application for Android that uses Bluetooth Low Energy (BLE) for communication. It is being developed as a minor project for my college course.
+BlueChat, a peer-to-peer chat application for Android that uses Bluetooth Low Energy (BLE) for communication. It is being developed as a minor project for my college course.
 
 The project is based on the [BluetoothCommunicator](https://github.com/niedev/BluetoothCommunicator) library and follows the architecture of its official example application.
 
